@@ -12,7 +12,7 @@
 # @param {TreeNode} root
 # @return {Integer}
 def min_diff_in_bst(root)
-  min_diff(root, nil, root.val*2+1)[0]
+  min_diff(root, nil, Float::INFINITY)[0]
 end
 
 def min_diff(root, prev, min_val)
