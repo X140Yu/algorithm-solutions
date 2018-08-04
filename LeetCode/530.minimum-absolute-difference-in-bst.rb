@@ -14,7 +14,7 @@
 # @return {Integer}
 def get_minimum_difference(root)
   arr = get_values(root, [])
-  min_val = Float::INFINITY
+  min_val = Float::INFINITY # 1.0/0
   (0...arr.count-1).each do |i|
       min_val = [min_val, arr[i+1] - arr[i]].min
   end
