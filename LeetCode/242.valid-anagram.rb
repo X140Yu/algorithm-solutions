@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/valid-anagram/description/
+# same like #383
 
 # @param {String} s
 # @param {String} t
@@ -11,11 +12,7 @@ def is_anagram(s, t)
   end
   t.chars.each do |c|
     hash[c] -= 1
+    return false if hash[c] < 0
   end
-
-  hash.each do |k, v|
-    return false if v != 0
-  end
-
   true
 end
