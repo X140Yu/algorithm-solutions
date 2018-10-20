@@ -1,9 +1,12 @@
 
+`which leetcode`
+raise 'leetcode-cli is not installed, please refer https://github.com/skygragon/leetcode-cli' if $?.exitstatus != 0
+
 number = ARGF.argv[0]
 
 comment = `leetcode show -gl ruby #{number}`.each_line.map{ |l| "\# #{l}" }.join
 
-return unless comment or $?.exist_status != 0
+return unless comment or $?.exitstatus != 0
 
 file_name = Dir.glob("#{number}\.*\.rb").first
 
