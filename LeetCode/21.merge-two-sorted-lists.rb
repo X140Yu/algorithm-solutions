@@ -60,3 +60,16 @@ def merge_two_lists(l1, l2)
   
   head  
 end
+
+def merge_two_lists2(l1, l2)
+  return l1 unless l2
+  return l2 unless l1
+  
+  if l1.val < l2.val
+    l1.next = merge_two_lists(l1.next, l2)
+    l1
+  else
+    l2.next = merge_two_lists(l1, l2.next)
+    l2
+  end
+end
