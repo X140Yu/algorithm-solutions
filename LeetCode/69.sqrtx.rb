@@ -36,6 +36,8 @@
 # @param {Integer} x
 # @return {Integer}
 def my_sqrt(x)
+  return 1 if x == 1
+
   trigger(x, 0, x / 2)
 end
 
